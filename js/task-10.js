@@ -8,9 +8,9 @@ const controls = document.querySelector('#controls')
 const input = document.querySelector('input')
 const container = document.querySelector('#boxes')
 
-// function destroyBoxes() {
-//   container.innerHTML = ''
-// }
+function destroyBoxes() {
+  container.innerHTML = ''
+}
 
 function createBoxes(amount) {
   return Array.from({ length: amount }, (_, i) => 
@@ -20,11 +20,11 @@ function createBoxes(amount) {
 
 controls.addEventListener('click', (e) => {
   if (e.target.dataset.create !== undefined && e.target.dataset.hasOwnProperty('create')) {
+    destroyBoxes()
     const items = createBoxes(input.value)
     container.insertAdjacentHTML('beforeend', items.join(''))
   }
   if (e.target.dataset.destroy !== undefined && e.target.dataset.hasOwnProperty('destroy')) { 
-    // destroyBoxes() 
-    container.innerHTML = ''
+    destroyBoxes() 
   }
 })

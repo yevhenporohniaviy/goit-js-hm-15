@@ -12,6 +12,7 @@ const button = widget.lastElementChild;
 
  
 button.addEventListener('click', () => {
-  body.style.backgroundColor = getRandomHexColor()
-  text.textContent = getRandomHexColor()
+  const color = getRandomHexColor()
+  body.style.backgroundColor =color
+  text.textContent = color
 })

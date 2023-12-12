@@ -6,7 +6,7 @@ input.addEventListener('blur', (e) => {
   const valueLength = e.target.value.length
   input.classList = '';
   
-  if (valueLength >= inputLenght) {
+  if (valueLength == inputLenght) {
     input.classList.add('valid')
   } else {
     input.classList.add('invalid')
